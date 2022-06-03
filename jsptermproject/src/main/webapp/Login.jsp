@@ -13,10 +13,11 @@
 	request.setCharacterEncoding("utf-8");
 
 	if(login.checkUser() == true){	
+		session.setAttribute("userID", login.get_userID());
 %>
 	<script>
 		alert('로그인 성공');
-		location.href="index.jsp"
+		location.href="Index.jsp";
 	</script>
 <%
 	}
