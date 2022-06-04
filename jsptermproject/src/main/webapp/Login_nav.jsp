@@ -12,20 +12,23 @@
 <%
 	request.setCharacterEncoding("utf-8");
 
-	if(login.checkUser() == true){	
-		session.setAttribute("userID", login.get_userID());
+	String userID = null;
+	if(session.getAttribute("userID") != null){
+		userID = (String)session.getAttribute("userID");
+	}
+	
+	if(userID != null){
 %>
 	<script>
-		alert('로그인 성공');
-		location.href="Index.jsp";
+		alert('이미 로그인 되어 있습니다');
+		history.go(-1);
 	</script>
 <%
 	}
 	else{
 %>
 	<script>
-		alert('아이디 또는 패스워드를 확인하세요');
-		history.go(-1);
+		location.href="Login_form.html";
 	</script>
 <%
 	}

@@ -5,9 +5,11 @@
  	border-color: #00a663;
 }
 .login-top-img{
-
 	padding: 100px;
 }
 .dropdown-menu > .active > a{
 	background-color: #00a663;
+}
+#intro-IT{
+	font-size: 15px;
 }
