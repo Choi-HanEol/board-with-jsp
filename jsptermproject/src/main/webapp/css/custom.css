@@ -4,12 +4,39 @@
  	background-color: #00a663;
  	border-color: #00a663;
 }
+.btn-primary:hover {
+	color: #fff;
+ 	background-color: rgb(0, 128, 64);
+ 	border-color: rgb(0, 128, 64);
+}
+.btn-primary:focus,
+.btn-primary:active{
+	color: #fff;
+ 	background-color: rgb(0, 128, 0);
+ 	border-color: rgb(0, 128, 0);
+}
+.row > .table-striped > a:hover{
+	background-color: #00a663;
+ 	border-color: #00a663;
+}
 .login-top-img{
 	padding: 100px;
 }
 .dropdown-menu > .active > a{
+	background-color: #ffffff;
+	color: #00a663;
+}
+.dropdown-menu > .active > a:hover{
 	background-color: #00a663;
+}
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > .active > a:active{
+	background-color: #008040;
 }
 #intro-IT{
 	font-size: 15px;
+}
+.pull-left,
+.pull-right{
+	margin: 0px 5px;
 }

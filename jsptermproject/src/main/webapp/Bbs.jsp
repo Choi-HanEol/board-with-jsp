@@ -20,7 +20,7 @@
 	if(userID != null){
 %>
 	<script>
-		location.href="Bbs_form.html";
+		location.href="Bbs_form.jsp";
 	</script>
 <%
 	}

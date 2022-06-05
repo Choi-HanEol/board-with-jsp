@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="jsptermproject.*"%>
+<jsp:useBean id="bm" class="jsptermproject.BoardManager" scope="application" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,12 +27,12 @@
 				<span class="icon-bar"></span>
 			</button>
 			<!-- 상단 바에 제목이 나타나고 클릭하면 main 페이지로 이동한다 -->
-			<a class="navbar-brand" href="Main.jsp" style="background-color: #eeeeee">울산대학교 IT융합학부</a>
+			<a class="navbar-brand" href="Main.jsp">울산대학교 IT융합학부</a>
 		</div>
 		<!-- 게시판 제목 이름 옆에 나타나는 메뉴 영역 -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="Bbs.jsp">게시판</a></li>
+				<li><a href="Bbs.jsp" style="background-color: #eeeeee">게시판</a></li>
 			</ul>
 			<!-- 헤더 우측에 나타나는 드랍다운 영역 -->
 			<ul class="nav navbar-nav navbar-right">
@@ -46,41 +48,31 @@
 			</ul>
 		</div>
 	</nav>
-	<!-- 메인 페이지 영역 시작 -->
+	<!-- 게시판 글쓰기 양식 영역 시작 -->
 	<div class="container">
-		<div class="jumbotron">
-			<div class="container">
-				<img src="img/univ.png">
-				<br>
-				<br>
-				<h2>울산대학교 IT융합학부</h2>
-				<p id="intro-IT">&nbspIT융합전공은 4차산업혁명시대를 선도하는 인재 양성을 목표로 컴퓨터과학 및 컴퓨터공학에 대한 전반적 교과목과 더불어 SW 시스템, 사물인터넷(IoT), AI/Bigdata 등 3개의 특성화 프로그램을 운영합니다. 교과과정은 컴퓨터프로그래밍, 자료구조, 논리회로, 컴퓨터구조, 데이터베이스, 운영체제 등의 전공 기초/심화 교과목 및 인공지능, 빅데이터분석, 사물인터넷응용, 모바일소프트웨어개발 등의 4차산업혁명 특성화 프로그램 교과목, 그리고 이들 지식을 종합적으로 활용하는 종합설계 과목인 캡스톤디자인 교과목으로 구성됩니다. 더불어 IT취업및진로특강 및 IT융합응용 교과목을 통하여 진로 탐색과 산업 융합 지식을 함양합니다.</p>
-			</div>
+		<div class="row">
+			<form method="post" action="WriteAction.jsp">
+				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+					<thead>
+						<tr>
+							<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" class="form-control" placeholder="글 제목" name="title" maxlength="50"></input></td>
+						</tr>
+						<tr>
+							<td><textarea class="form-control" placeholder="글 내용" name="content" maxlength="2048" style="height: 350px;"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- 글쓰기 버튼 생성 -->
+				<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+			</form>
 		</div>
 	</div>
-	<!-- 메인 페이지 이미지 삽입 영역 -->
-	<div class="container" style="margin-bottom: 50px;">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-				<div class="item active">
-					<img style="width: 1140px; height: 400px;" src="https://t1.daumcdn.net/cfile/tistory/99C7CD455A8F70C739">
-				</div>
-				<div class="item">
-					<img style="width: 1140px; height: 400px;" src="https://news.samsungdisplay.com/wp-content/uploads/2021/01/shutterstock_1199235616.jpg">
-				</div>
-				<div class="item">
-					<img style="width: 1140px; height: 400px;" src="https://t1.daumcdn.net/cfile/tistory/992529365B31EB4A35">
-				</div>
-			</div>
-			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left"></span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right"></span>
-			</a>
-		</div>
-	</div>
-	<!-- 메인 페이지 영역 끝 -->
+	<!-- 게시판 글쓰기 양식 영역 끝 -->
 	<!-- 부트스트랩 참조 영역 -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>

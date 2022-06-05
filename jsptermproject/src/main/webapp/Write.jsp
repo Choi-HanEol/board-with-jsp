@@ -6,30 +6,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login Page</title>
+<title>확인 중</title>
 </head>
 <body>
 <%
-	request.setCharacterEncoding("utf-8");	
+	request.setCharacterEncoding("utf-8");
+
+	String userID = null;
+	if(session.getAttribute("userID") != null){
+		userID = (String)session.getAttribute("userID");
+	}
 	
-	if(login.checkUser() == true){	
-		session.setAttribute("userID", login.get_userID());
+	if(userID != null){
 %>
 	<script>
-		alert('로그인 성공');
-		location.href="Main.jsp";
+		location.href="Write_form.jsp";
 	</script>
 <%
 	}
 	else{
 %>
 	<script>
-		alert('아이디 또는 패스워드를 확인하세요');
-		history.go(-1);
+		alert('로그인을 먼저 해주세요');
+		location.href="Login_form.html";
 	</script>
 <%
 	}
 %>
 
 </body>
-

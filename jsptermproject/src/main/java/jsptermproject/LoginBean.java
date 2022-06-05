@@ -39,6 +39,5 @@ public class LoginBean {
 	public String get_userPassword() {
 		return _userPassword;
 	}
-	
 
 }
