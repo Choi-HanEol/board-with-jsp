@@ -12,6 +12,11 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/custom.css">
 <title>IT융합학부 게시판</title>
+<style>
+	#tr-event:hover{
+		background-color: #afafaf77;
+	}
+</style>
 </head>
 <body>
 	<nav class="navbar navbar-default"> <!-- 네비게이션 -->
@@ -48,9 +53,7 @@
 		</div>
 	</nav>
 	<div class="container">
-		<div class="row">
-			<form id="content_post" method='post' action='ViewAction.jsp'> 
-				  	<input type="hidden" name="content" value="안농" /> 
+		<div class="row">			  	
 			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 				<thead>
 					<tr>
@@ -68,9 +71,9 @@
 				%>
 				
 				 
-					<tr>
+					<tr id="tr-event" onclick="location.href='ViewAction.jsp?number=<%=i %>'">
 						<td><%=i %></td>
-						<td><a href="ViewAction.jsp?number=<%=i %>" style="color: black;"><%=bb.getTitle() %></a></td>
+						<td><%=bb.getTitle() %></td>
 						<td><%=bb.getName() %></td>
 						<td><%=bb.getDate() %></td>
 					</tr>
@@ -82,7 +85,6 @@
 				</tbody>	
 			</table>
 			<a href="Write.jsp" class="btn btn-primary pull-right">글쓰기</a>
-			</form>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
