@@ -71,7 +71,7 @@
 				%>
 				
 				 
-					<tr id="tr-event" onclick="location.href='ViewAction.jsp?number=<%=i %>'">
+					<tr id="tr-event" style="cursor:pointer" onclick="location.href='ViewAction.jsp?number=<%=i %>'">
 						<td><%=i %></td>
 						<td><%=bb.getTitle() %></td>
 						<td><%=bb.getName() %></td>

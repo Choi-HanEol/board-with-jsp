@@ -73,8 +73,8 @@ bm.set(i-1,board);
 					</tbody>
 				</table>
 				<!-- 글쓰기 버튼 생성 -->
-				<a href="Modify_form.jsp?num_modify=<%=board.getNumber() %>" class="btn btn-primary pull-right">수정</a>
-				<a href="RemoveAction.jsp?num_remove=<%=board.getNumber() %>" class="btn btn-primary pull-right">제거</a>
+				<a href="Modify_form.jsp?num_modify=<%=i %>" class="btn btn-primary pull-right">수정</a>
+				<a href="RemoveAction.jsp?num_remove=<%=i %>" class="btn btn-primary pull-right">제거</a>
 			<a href="Bbs_form.jsp" class="btn btn-primary pull-left">목록 보기</a>
 		</div>
 	</div>
