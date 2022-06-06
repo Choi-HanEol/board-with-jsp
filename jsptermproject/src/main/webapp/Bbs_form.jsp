@@ -65,7 +65,7 @@
 				%>
 					<tr>
 						<td><%=bb.getNumber() %></td>
-						<td><a href="Main.jsp" style="color: black;"><%=bb.getTitle() %></a></td>
+						<td><a href="ViewAction.jsp?number=<%=bb.getNumber() %>" style="color: black;"><%=bb.getTitle() %></a></td>
 						<td><%=bb.getName() %></td>
 						<td><%=bb.getDate() %></td>
 					</tr>

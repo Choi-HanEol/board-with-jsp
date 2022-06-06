@@ -5,10 +5,8 @@
 <jsp:setProperty name="board" property="*" />
 <jsp:useBean class="jsptermproject.BoardManager" id="bm" scope="application" />
 <%
-bm.add(board);
-board.setNumber(bm.getNumber());
-%>
 
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,7 +71,7 @@ board.setNumber(bm.getNumber());
 				</table>
 				<!-- 글쓰기 버튼 생성 -->
 				<a href="Modify_form.jsp" class="btn btn-primary pull-right">수정</a>
-				<a href="RemoveAction.jsp?value=$<% %>" class="btn btn-primary pull-right">제거</a>
+				<a href="RemoveAction.jsp" class="btn btn-primary pull-right">제거</a>
 			<a href="Bbs_form.jsp" class="btn btn-primary pull-left">목록 보기</a>
 		</div>
 	</div>
