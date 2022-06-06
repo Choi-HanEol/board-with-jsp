@@ -5,8 +5,9 @@
 <jsp:setProperty name="board" property="*" />
 <jsp:useBean class="jsptermproject.BoardManager" id="bm" scope="application" />
 <%
-bm.add(board);
-board.setNumber(bm.getNumber());
+String num_modify = request.getParameter("num_modify");
+int i = Integer.parseInt(num_modify);
+bm.set(i-1,board);
 
 %>
 <!DOCTYPE html>

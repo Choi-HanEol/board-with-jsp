@@ -1,11 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="jsptermproject.*"%>
 <% request.setCharacterEncoding("utf-8");%>
 <jsp:useBean class="jsptermproject.BoardBean" id="board"/>
 <jsp:setProperty name="board" property="*" />
 <jsp:useBean class="jsptermproject.BoardManager" id="bm" scope="application" />
 <%
-
+	String number = request.getParameter("number");
+	int n = Integer.parseInt(number);
+	String content="";
+	String title="";
+	int i=1;
+	for(BoardBean bb : bm.getBoardList()){
+		if(i == n){
+			content = bb.getContent();
+			title = bb.getTitle();
+			break;
+		}
+		i++;
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -57,21 +69,21 @@
 				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 					<thead>
 						<tr>
-							<th colspan="2" style="background-color: #eeeeee; text-align: center;"><jsp:getProperty name="board" property="title" /></th>
+							<th colspan="2" style="background-color: #eeeeee; text-align: center;"><%=title %></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td><p class="form-control" style="margin: 0px;" >작성자: <jsp:getProperty name="board" property="name"/></td>
+							<td><p class="form-control" style="margin: 0px;" >작성자: <jsp:getProperty name="board" property="name" /></td>
 						</tr>
 						<tr>
-							<td><div class="form-control" style="height: 350px;"><jsp:getProperty name="board" property="content" /></div></td>
+							<td><div class="form-control" style="height: 350px;"><%=content %></div></td>
 						</tr>
 					</tbody>
 				</table>
 				<!-- 글쓰기 버튼 생성 -->
-				<a href="Modify_form.jsp" class="btn btn-primary pull-right">수정</a>
-				<a href="RemoveAction.jsp" class="btn btn-primary pull-right">제거</a>
+				<a href="Modify_form.jsp?num_modify=<%=board.getNumber() %>" class="btn btn-primary pull-right">수정</a>
+				<a href="RemoveAction.jsp?num_remove=<%=number %>" class="btn btn-primary pull-right">제거</a>
 			<a href="Bbs_form.jsp" class="btn btn-primary pull-left">목록 보기</a>
 		</div>
 	</div>

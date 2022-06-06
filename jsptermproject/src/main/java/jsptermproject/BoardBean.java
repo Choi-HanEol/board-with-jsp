@@ -9,7 +9,7 @@ public class BoardBean {
 	LoginBean lb = new LoginBean();
 	BoardManager bma = new BoardManager();
 	
-	private int number;
+	private int number = bma.getNumber();
 //	private int num;
 	private String title;
 	private String name = lb.get_userID();

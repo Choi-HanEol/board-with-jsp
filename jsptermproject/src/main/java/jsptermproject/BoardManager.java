@@ -12,9 +12,12 @@ public class BoardManager {
 	public void add(BoardBean bb) {
 		boardlist.add(bb);
 	}
-	public void remove(BoardBean bb) {
+	public void remove(int bb) {
 		boardlist.remove(bb);
 		
+	}
+	public void set(int i, BoardBean bb) {
+		boardlist.set(i, bb);
 	}
 	public List<BoardBean> getBoardList(){
 		return boardlist;
